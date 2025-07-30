@@ -1,4 +1,5 @@
 name: Deploy Production to NuxtHub
+
 on:
   push:
     branches:
@@ -7,6 +8,11 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
+    env:
+      NUXT_HUB_PROJECT_DEPLOY_TOKEN: ${{ secrets.NUXT_HUB_PROJECT_DEPLOY_TOKEN }}
+      NUXT_HUB_PROJECT_KEY: ${{ secrets.NUXT_HUB_PROJECT_KEY }}
+
     steps:
       - uses: actions/checkout@v4
 
