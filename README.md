@@ -4,6 +4,12 @@ Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduct
 
 ## Setup
 
+อัพขึ้น
+git add .
+git commit -m "update"
+git push
+
+
 Make sure to install dependencies:
 
 ```bash
