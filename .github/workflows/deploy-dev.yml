@@ -32,7 +32,5 @@ jobs:
 
       - name: Deploy to NuxtHub (dev)
         uses: nuxt-hub/action@v3
-        env:
-          NUXT_HUB_PROJECT_KEY: ${{ secrets.NUXT_HUB_PROJECT_KEY }}
-          NUXT_HUB_PROJECT_DEPLOY_TOKEN: ${{ secrets.NUXT_HUB_PROJECT_DEPLOY_TOKEN }}
-          NUXT_HUB_ENV: dev
+        with:
+          project-key: ${{ secrets.NUXT_HUB_PROJECT_KEY }}
