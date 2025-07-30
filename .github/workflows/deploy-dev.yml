@@ -9,10 +9,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    env:
-      NUXT_HUB_PROJECT_DEPLOY_TOKEN: ${{ secrets.NUXT_HUB_PROJECT_DEPLOY_TOKEN }}
-      NUXT_HUB_PROJECT_KEY: ${{ secrets.NUXT_HUB_PROJECT_KEY }}
-
     steps:
       - uses: actions/checkout@v4
 
@@ -34,5 +30,6 @@ jobs:
       - name: Deploy to NuxtHub (dev)
         uses: nuxt-hub/action@v2
         with:
-          project-key: client-9ard
+          project-key: ${{ secrets.NUXT_HUB_PROJECT_KEY }}
+          deploy-token: ${{ secrets.NUXT_HUB_PROJECT_DEPLOY_TOKEN }}
           environment: dev
