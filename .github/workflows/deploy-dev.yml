@@ -31,6 +31,6 @@ jobs:
         run: npx nuxthub@latest ensure
 
       - name: Deploy to NuxtHub (dev)
-        uses: nuxt-hub/action@v3
+        uses: nuxt-hub/action@v2
         with:
           project-key: ${{ secrets.NUXT_HUB_PROJECT_KEY }}
