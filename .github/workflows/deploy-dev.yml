@@ -1,0 +1,32 @@
+name: Deploy Dev to NuxtHub
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Ensure NuxtHub module is installed
+        run: npx nuxthub@latest ensure
+
+      - name: Deploy to NuxtHub (dev)
+        uses: nuxt-hub/action@v2
+        with:
+          project-key: client-9ard
+          environment: dev
