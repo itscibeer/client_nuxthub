@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npx drizzle-kit:*)",
+      "Bash(npx nuxthub database migrations create:*)",
+      "Bash(npx nuxthub:*)",
+      "Bash(npx nuxt:*)",
+      "Bash(taskkill:*)",
+      "Bash(cmd //c:*)",
+      "Bash(curl:*)",
+      "Bash(rm:*)",
+      "WebFetch(domain:client-dev.iplaycafe.workers.dev)",
+      "Bash(npx wrangler:*)",
+      "Bash(npm run build:*)",
+      "Bash(node:*)",
+      "Bash(npm run dev:*)",
+      "WebFetch(domain:a1781dbe-client-dev.iplaycafe.workers.dev)",
+      "WebFetch(domain:6abadc7a-client-dev.iplaycafe.workers.dev)",
+      "Bash(mv:*)",
+      "WebFetch(domain:e5197420-client-dev.iplaycafe.workers.dev)",
+      "Bash(npm run deploy:dev:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

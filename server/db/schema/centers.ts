@@ -1,0 +1,28 @@
+import { integer, text, sqliteTable } from "drizzle-orm/sqlite-core";
+
+export const centers = sqliteTable("centers", {
+  id: integer("id").primaryKey(),
+  user_id: integer("user_id"),
+  center_name: integer("center_name"),
+  logo: integer("logo"),
+  cover: integer("cover"),
+  is_term_condition: integer("is_term_condition").default(0),
+  is_active: integer("is_active").default(1),
+  description: integer("description"),
+  gallery: integer("gallery").default(0),
+  currency: integer("currency"),
+  country_timezone: integer("country_timezone"),
+  time_zone: integer("time_zone"),
+  time_format: text("time_format"),
+  hand_over_mode: text("hand_over_mode"),
+  deleted_reason: integer("deleted_reason"),
+  deleted_status: text("deleted_status"),
+  created_at: integer("created_at").notNull().default(0),
+  updated_at: integer("updated_at").default(0),
+  deleted_at: integer("deleted_at").default(0),
+  is_vip_ads: integer("is_vip_ads").default(0),
+  main_video: integer("main_video"),
+  left_image: integer("left_image"),
+  bottom_image: integer("bottom_image"),
+  public_id: integer("public_id").unique(),
+});

@@ -7,8 +7,15 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
     "trig": "git commit --allow-empty -m 'trigger' && git push origin dev",
-    "postinstall": "nuxt prepare"
+    "dev:local": "cross-env NUXT_PUBLIC_API_BASE=http://localhost:3000 nuxt dev",
+    "dev:dev": "cross-env NUXT_PUBLIC_API_BASE=https://client-dev.iplaycafe.workers.dev nuxt dev",
+    "dev:preview": "cross-env NUXT_PUBLIC_API_BASE=https://client-preview.iplaycafe.workers.dev nuxt dev",
+    "dev:production": "cross-env NUXT_PUBLIC_API_BASE=https://client-production.iplaycafe.workers.dev nuxt dev",
+    "deploy:dev": "npx nuxthub deploy --env=dev",
+    "deploy:preview": "npx nuxthub deploy --env=preview",
+    "deploy:production": "npx nuxthub deploy"
   },
   "dependencies": {
     "@nuxt/devtools": "^2.6.2",
@@ -23,6 +30,9 @@
   },
   "devDependencies": {
     "@types/node": "^24.1.0",
-    "drizzle-kit": "^0.31.4"
+    "cross-env": "^10.0.0",
+    "drizzle-kit": "^0.31.4",
+    "typescript": "^5.9.2",
+    "wrangler": "^4.30.0"
   }
 }

@@ -8,17 +8,19 @@ interface User {
   email: string
 }
 
+const config = useRuntimeConfig()
 const { data, pending, error } = useAsyncData<User[]>(
   'get-users',
   async () => {
-    const config = useRuntimeConfig()
-    const res = await axios.get(`${config.public.apiBase}/api/user`)
+    
+    const res = await axios.get(`/api/user`)
+
     return res.data
   }
 )
 
-
 console.log('data', data?.value)
+console.log('config.public.apiBase', config.public.apiBase)
 </script>
 
 

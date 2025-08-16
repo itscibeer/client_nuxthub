@@ -8,14 +8,20 @@ export default defineNuxtConfig({
 
   $development: {
     hub: {
-      remote: true
-    }
+      remote: true,
+    },
+  },
+
+  $production: {
+    hub: {
+      remote: true,
+    },
   },
 
   compatibilityDate: "2025-07-15",
 
   devtools: { enabled: true },
-  ssr: false,
+  ssr: true,
 
   alias: {
     "~": resolve(__dirname, "./"),
@@ -30,7 +36,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      apiBase: process.env.NUXT_PUBLIC_API_BASE || "http://localhost:3000",
+      apiBase: "https://client-dev.iplaycafe.workers.dev",
     },
   },
 });
