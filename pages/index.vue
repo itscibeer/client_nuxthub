@@ -24,7 +24,7 @@ console.log('data', data?.value)
 
 <template>
   <div>
-    <h1>Users</h1>
+    <h1>Users Claude</h1>
 
     <div v-if="pending">Loading...</div>
     <div v-else-if="error">Error: {{ error.message }}</div>
